@@ -8,6 +8,16 @@ class MyApp extends StatefulWidget {
   
 }
 class MyAppState extends State<MyApp> {
+  final List<String> _measures = [
+    'meters',
+    'kilometers',
+    'grams',
+    'kilograms',
+    'feet',
+    'miles',
+    'pounds (lbs)',
+    'ounces',
+  ];
   double _numberForm = 0;
   @override
   void initState() {
@@ -21,10 +31,23 @@ class MyAppState extends State<MyApp> {
       appBar: AppBar(
           title: Text('Unit Converter'),
       ),
+
       body: Center(
           child: Column(
             children: [
-               TextField(
+              
+            DropdownButton (
+              items: _measures.map((String value)
+              {
+                return DropdownMenuItem<String> (
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (_) {},
+            ),
+
+            TextField(
             onChanged: (text) {
               var rv = double.tryParse(text);
               if (rv != null) {
@@ -34,8 +57,11 @@ class MyAppState extends State<MyApp> {
               }
             }
           ),
+
           Text(_numberForm.toString())
           ],)
+
       ),),
+
   );}
 }

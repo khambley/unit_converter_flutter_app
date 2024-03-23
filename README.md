@@ -1,16 +1,12 @@
-# unit_converter
+# Unit Converter Mobile App
 
-A new Flutter project.
+A units conversion app, specifically distance and weights, created as a helper when traveling abroad.  
 
-## Getting Started
+Right now, specifically to the UK, (which I'm going to later this year).  
 
-This project is a starting point for a Flutter application.
+It will convert distance and weight measures from imperial to metric, and vice versa.
+- meters <-> feet
+- kilometers <-> miles
+- grams <-> ounces
+- kilograms <-> pounds (lbs)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
