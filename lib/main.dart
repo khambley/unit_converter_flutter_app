@@ -8,6 +8,8 @@ class MyApp extends StatefulWidget {
   
 }
 class MyAppState extends State<MyApp> {
+  String? _startMeasure; //will contain the selected value from the dropdownbutton
+
   final List<String> _measures = [
     'meters',
     'kilometers',
@@ -35,16 +37,21 @@ class MyAppState extends State<MyApp> {
       body: Center(
           child: Column(
             children: [
-              
+
             DropdownButton (
-              items: _measures.map((String value)
+              items: _measures.map((String? value)
               {
                 return DropdownMenuItem<String> (
                   value: value,
-                  child: Text(value),
+                  child: Text(value ?? ""),
                 );
               }).toList(),
-              onChanged: (_) {},
+              onChanged: (value) {
+                setState(() {
+                  _startMeasure = value ?? "";
+                });
+              },
+              value: _startMeasure, //needs this to read the selected value
             ),
 
             TextField(
